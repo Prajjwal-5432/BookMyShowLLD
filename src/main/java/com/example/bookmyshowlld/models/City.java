@@ -1,10 +1,12 @@
 package com.example.bookmyshowlld.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,6 +18,6 @@ public class City extends BaseModel {
     //City:Theatre
     // 1:M (one city can have many theatre)
     // 1:1 (one theatre can belong to only one city)
-    @OneToMany
-    private List<Theatre> theatres;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Theatre> theatres = new ArrayList<>();
 }
