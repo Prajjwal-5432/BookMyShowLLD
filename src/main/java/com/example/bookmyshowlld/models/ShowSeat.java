@@ -1,15 +1,13 @@
 package com.example.bookmyshowlld.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@Table(name = "show_seat_mapping")
 public class ShowSeat extends BaseModel {
     //ShowSeat : Show
     // 1 : 1
