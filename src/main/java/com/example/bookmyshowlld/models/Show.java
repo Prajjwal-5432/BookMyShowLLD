@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class Show extends BaseModel {
     // 1 : M (one show can have many show seats)
     // 1 : 1 (one show seat only belongs to one show)
     @OneToMany(mappedBy = "show")
-    private List<ShowSeat> showSeats;
+    private List<ShowSeat> showSeats = new ArrayList<>();
 
     //Show : ShowSeatType
     // 1 : M (one show can have many showseattype)
